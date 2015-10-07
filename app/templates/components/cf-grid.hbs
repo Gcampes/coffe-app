@@ -1,0 +1,15 @@
+<table>
+  {{#each model as |item|}}
+  <tr data-id="{{item.id}}" {{action 'updateModel' item}}>
+    <td>
+      {{item.id}}
+    </td>
+    <td>
+      {{item.name}}
+    </td>
+    <td>
+      {{item.coffeCount}}
+    </td>
+  </tr>
+  {{/each}}
+</table>

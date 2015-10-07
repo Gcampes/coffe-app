@@ -1,0 +1,32 @@
+<div class="content-container">
+  <div class="content">
+    <h3>
+      <span>
+        <i class="fa fa-users"></i>
+      </span>
+      <span>Users</span>
+    </h3>
+
+
+    <a href="users/new" class="btn add">
+      <span>
+        Add
+      </span>
+    </a>
+    <a href="#" class="btn upd" {{action 'updateUser'}}>
+      <span>
+        Edit
+      </span>
+    </a>
+    <a href="#" class="btn del" {{action 'deleteUser'}}>
+      <span>
+        Delete
+      </span>
+    </a>
+
+    {{#cf-grid model=model}}
+    {{/cf-grid}}
+  </div>
+</div>
+
+{{outlet}}
