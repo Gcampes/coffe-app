@@ -7,25 +7,28 @@
       <span>Users</span>
     </h3>
 
+    <div class="row clearfix">
+      <a href="users/new" class="btn add">
+        <span>
+          Add
+        </span>
+      </a>
+      <!-- <a href="users/update/1" class="btn upd" >
+        <span>
+          Edit
+        </span>
+      </a> -->
+      <!-- <a href="#" class="btn del" {{action 'deleteUser'}}>
+        <span>
+          Delete
+        </span>
+      </a> -->
+    </div>
 
-    <a href="users/new" class="btn add">
-      <span>
-        Add
-      </span>
-    </a>
-    <a href="#" class="btn upd" {{action 'updateUser'}}>
-      <span>
-        Edit
-      </span>
-    </a>
-    <a href="#" class="btn del" {{action 'deleteUser'}}>
-      <span>
-        Delete
-      </span>
-    </a>
-
-    {{#cf-grid model=model}}
-    {{/cf-grid}}
+    <div class="row">
+      {{#cf-grid model=model}}
+      {{/cf-grid}}
+    </div>
   </div>
 </div>
 

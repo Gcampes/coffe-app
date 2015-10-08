@@ -1,6 +1,6 @@
 <table>
   {{#each model as |item|}}
-  <tr data-id="{{item.id}}" {{action 'updateModel' item}}>
+  <tr data-id="{{item.id}}" >
     <td>
       {{item.id}}
     </td>
@@ -9,6 +9,10 @@
     </td>
     <td>
       {{item.coffeCount}}
+    </td>
+    <td>
+      {{#link-to 'users.update' item.id}}<i class="fa fa-pencil" title="Edit person"></i>{{/link-to}}
+      <i class="fa fa-trash" {{action 'deleteUser' item}} title="Delete person"></i>
     </td>
   </tr>
   {{/each}}

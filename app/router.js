@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('history', {});
   this.route('users', {}, function() {
     this.route('new', {});
+    this.route('update', {path:'/update/:id'});
   });
 });
 
