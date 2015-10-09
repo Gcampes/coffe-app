@@ -1,0 +1,30 @@
+<div class="content-container">
+  <div class="content">
+    <div class="new-user">
+      <h4>Add new Coffee:</h4>
+
+      <div class="form-row">
+        <label for="name">Name</label>
+      </div>
+
+      <div class="form-row">
+        {{input type=text value=desc}}
+      </div>
+
+      <div class="form-row">
+        <label for="name">Cost</label>
+      </div>
+
+      <div class="form-row">
+        {{input type=text value=cost}}
+      </div>
+      <div class="form-row clearfix">
+        <a href="#" class="btn add" {{action 'addCoffee' desc cost}}>
+          <span>
+            Save
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,23 @@
+{{#if user}}
 <table>
+  <tr>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+    <th>
+      Edit/Delete
+    </th>
+  </tr>
   {{#each model as |item|}}
-  <tr data-id="{{item.id}}" >
+  <tr>
     <td>
       {{item.id}}
     </td>
     <td>
       {{item.name}}
-    </td>
-    <td>
-      {{item.coffeCount}}
     </td>
     <td>
       {{#link-to 'users.update' item.id}}<i class="fa fa-pencil" title="Edit person"></i>{{/link-to}}
@@ -17,3 +26,71 @@
   </tr>
   {{/each}}
 </table>
+{{else if coffee}}
+<table>
+  <tr>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+    <th>
+      Cost
+    </th>
+    <th>
+      Edit/Delete
+    </th>
+  </tr>
+  {{#each model as |item|}}
+  <tr>
+    <td>
+      {{item.id}}
+    </td>
+    <td>
+      {{item.name}}
+    </td>
+    <td>
+      R$ {{item.cost}}
+    </td>
+    <td>
+      {{#link-to 'coffee.update' item.id}}<i class="fa fa-pencil" title="Edit coffee"></i>{{/link-to}}
+      <i class="fa fa-trash" {{action 'deleteCoffee' item}} title="Delete coffee"></i>
+    </td>
+  </tr>
+  {{/each}}
+</table>
+{{else if history}}
+<table>
+  <tr>
+    <th>
+      User
+    </th>
+    <th>
+      Coffee
+    </th>
+    <th>
+      Cost
+    </th>
+    <th>
+      Date
+    </th>
+  </tr>
+  {{#each model.history as |item|}}
+  <tr>
+    <td>
+      {{item.user.name}}
+    </td>
+    <td>
+      {{item.coffee.name}}
+    </td>
+    <td>
+      R$ {{item.coffee.cost}}
+    </td>
+    <td>
+      {{item.date}}
+    </td>
+  </tr>
+  {{/each}}
+</table>
+{{/if}}

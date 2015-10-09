@@ -22,14 +22,22 @@ html[xmlns] .clearfix {
 body{
   background-color: rgb(231, 231, 231);
   margin: 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-width: 1270px;
 }
 
-h2, h3, h4{
+h2, h3, h4, h5{
   margin: 0px;
 }
 
 .side-menu{
   width: 20%;
+  min-width: 254px;
   height: 100%;
   position: fixed;
   background: rgb(31, 30, 30);
@@ -151,8 +159,14 @@ a{
 
 .cf-grid>table{
   width: 100%;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   border-spacing: 0px;
+}
+
+.cf-grid>table>tr>th{
+  text-indent: 8px;
+  text-align: left;
+  color: rgb(13, 82, 107);
 }
 
 .cf-grid>table>tr:hover{
@@ -172,7 +186,7 @@ a{
 }
 
 .cf-grid>table>tr>td>a{
-  color: #000;
+  color: rgb(0, 0, 0);
 }
 
 .cf-grid>table>tr:nth-child(1)>td{
@@ -191,6 +205,7 @@ a{
   border-radius: 1px;
   font-family: 'Raleway';
   display: block;
+  cursor: pointer;
 }
 
 .add{
@@ -234,4 +249,101 @@ a{
 
 .content-container>.content>.new-user>.form-row>.btn.add>span:before{
   content: '\f0c7';
+}
+
+.cf-coffee-container{
+  width: 730px;
+  height: 500px;
+  background-color: rgb(213, 213, 213);
+  overflow-y: scroll;
+  float: left;
+}
+
+.coffee-selected{
+  margin-left: 40px;
+  float: left;
+  width: 200px;
+  text-align: center;
+}
+
+.coffee-selected>.selected>.thumbnail{
+  background-color: rgb(223, 223, 223);
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background-image: url('../../capsule.jpg');
+  background-size: cover;
+}
+
+.coffee-selected>.confirm-drink{
+  width: 80px;
+  float: none;
+  margin: 0 auto;
+}
+
+.coffee-selected>.selected>.title>h4{
+  color:  rgb(69, 156, 189);
+}
+
+.coffee-selected>.confirm-drink:before{
+  content: '\f00c';
+  font-family: FontAwesome;
+}
+
+.coffee-selected>.confirm-drink:hover{
+  background-color: rgb(19, 199, 26);
+}
+
+.cf-coffee-container>.item{
+  width: 236px;
+  height: 240px;
+  background-color: rgb(61, 61, 61);
+  float: left;
+  margin: 2px;
+  background-image: url('../../capsule.jpg');
+  background-size: cover;
+}
+
+.cf-coffee-container>.item>.cover{
+  width: 236px;
+  height: 240px;
+  background-color: rgba(0, 0, 0, 0.9);
+  float: left;
+  cursor: pointer;
+}
+
+.cf-coffee-container>.item>.cover.active, .cf-coffee-container>.item>.cover:hover{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cf-coffee-container>.item>.cover.active>h5, .cf-coffee-container>.item>.cover:hover>h5{
+  color: rgb(255, 255, 255);
+}
+
+.cf-coffee-container>.item>.cover>h4{
+  color: rgb(235, 232, 232);
+  text-align: center;
+}
+
+.cf-coffee-container>.item>.cover>h5{
+  color: rgb(100, 198, 236) ;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 70px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(120, 120, 120);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0, 0, 0, 0.4);
 }

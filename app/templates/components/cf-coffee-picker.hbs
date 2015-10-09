@@ -1,1 +1,38 @@
+<div class="cf-coffee-picker">
+  <div class="cf-coffee-container">
+    {{#each sorted as |item|}}
+      <div class="item">
+        <div class="cover" {{action 'selectCoffee' item}}>
+          <h5>{{item.name}}</h5>
+          <h4>R$ {{item.cost}}</h4>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+  {{#if selectedCoffee}}
+  <div class="coffee-selected">
+    <div class="selected">
+      <div class="title">
+        <h5>{{selectedCoffee.name}}</h5>
+        <h4>R$ {{selectedCoffee.cost}}</h4>
+      </div>
+      <div class="thumbnail">
+        <!--  -->
+      </div>
+    </div>
+    <div class="btn confirm-drink add">
+      Confirm
+    </div>
+  </div>
+  {{/if}}
+</div>
+
+<script>
+  $('.cover').click(function() {
+    $('.active').removeClass('active');
+    $(this).addClass('active');
+  })
+</script>
+
 {{yield}}

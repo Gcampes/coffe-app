@@ -6,11 +6,15 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('dashboard', {});
+  this.route('dashboard', {}, function() {});
   this.route('history', {});
   this.route('users', {}, function() {
     this.route('new', {});
     this.route('update', {path:'/update/:id'});
+  });
+  this.route('coffee', {}, function() {
+    this.route('update', {path:'/update/:id'});
+    this.route('new', {});
   });
 });
 

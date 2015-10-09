@@ -16,6 +16,20 @@ export default Ember.Component.extend({
         user.deleteRecord();
         user.save();
       });
+    },
+
+    updateCoffee(model){
+      this.model.set('coffee', model);
+      this.controller.set('changeCoffee', model);
+      this.controller.set('desc', this.controller.changeUser.get('name'));
+    },
+
+    deleteCoffee(item){
+      this.model.set('coffee', item);
+      this.get('targetObject.store').findRecord('coffee', this.model.get('coffee').id).then(function(coffee){
+        coffee.deleteRecord();
+        coffee.save();
+      });
     }
   }
 });
