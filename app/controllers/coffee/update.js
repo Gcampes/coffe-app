@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    updateUser(model){
+    updateCoffee(model){
       this.model.save();
     },
   }
