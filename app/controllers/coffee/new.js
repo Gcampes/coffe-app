@@ -11,9 +11,8 @@ export default Ember.Controller.extend({
         });
         newCoffee.save();
       }
-      else{
-        alert('Erro');
-      }
+      else
+        alert('Erro')
     }
   }
 });

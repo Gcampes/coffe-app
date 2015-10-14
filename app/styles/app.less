@@ -161,12 +161,14 @@ a{
   width: 100%;
   background-color: rgb(255, 255, 255);
   border-spacing: 0px;
+  margin-top: 10px;
 }
 
 .cf-grid>table>tr>th{
   text-indent: 8px;
   text-align: left;
-  color: rgb(13, 82, 107);
+  color: rgb(159, 230, 255);
+  background-color: rgb(48, 48, 48);
 }
 
 .cf-grid>table>tr:hover{
@@ -191,10 +193,6 @@ a{
 
 .cf-grid>table>tr:nth-child(1)>td{
   border-top: none;
-}
-
-.cf-grid>table>tr>td:last-child, .cf-grid>table>tr>th:last-child{
-  width: 120px;
 }
 
 .btn{
@@ -258,12 +256,13 @@ a{
 .cf-coffee-container{
   width: 735px;
   height: 500px;
-  background-color: rgb(213, 213, 213);
+  background-color: rgb(181, 176, 176);
   overflow-y: scroll;
   float: left;
 }
 
 .coffee-selected{
+  margin-top: 70px;
   margin-left: 40px;
   float: left;
   width: 200px;
@@ -277,6 +276,7 @@ a{
   margin: 20px auto;
   background-image: url('../../capsule.jpg');
   background-size: cover;
+  border-radius: 3px;
 }
 
 .coffee-selected>.confirm-drink{
@@ -285,8 +285,9 @@ a{
   margin: 0 auto;
 }
 
-.coffee-selected>.selected>.title>h4{
+.coffee-selected>.selected>.title>h5{
   color:  rgb(69, 156, 189);
+  font-size: 25px;
 }
 
 .coffee-selected>.confirm-drink:before{
@@ -336,7 +337,29 @@ a{
   margin-top: 70px;
 }
 
+.cf-card-expense{
+  margin-top: 10px;
+  background-color: rgb(66, 111, 6);
+  width: 735px;
+  height: 100px;
+  border-radius: 3px;
+  line-height: 100px;
+}
+
+.cf-card-expense>h4{
+  text-indent: 20px;
+  color: rgb(231, 231, 231);
+  font-size: 37px;;
+}
+
+.cf-card-expense>h4>span{
+  color: rgb(255, 145, 0);
+  float: right;
+  margin-right: 30px;
+}
+
 ::-webkit-scrollbar {
+    width: 10px;
 }
 
 /* Track */

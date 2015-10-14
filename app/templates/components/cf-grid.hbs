@@ -64,9 +64,6 @@
 <table>
   <tr>
     <th>
-      User
-    </th>
-    <th>
       Coffee
     </th>
     <th>
@@ -76,11 +73,8 @@
       Date
     </th>
   </tr>
-  {{#each model.history as |item|}}
+  {{#each sorted as |item|}}
   <tr>
-    <td>
-      {{item.user.name}}
-    </td>
     <td>
       {{item.coffee.name}}
     </td>

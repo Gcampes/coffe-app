@@ -6,8 +6,11 @@
       </span>
       <span>Dashboard</span>
     </h3>
+    <div class="row clearfix">
+      {{#cf-coffee-picker sorted=sorted  createHistory='createHistory'}}{{/cf-coffee-picker}}
+    </div>
     <div class="row">
-      {{#cf-coffee-picker sorted=sorted}}{{/cf-coffee-picker}}
+      {{#cf-expenses expense=expense}}{{/cf-expenses}}
     </div>
   </div>
 </div>
