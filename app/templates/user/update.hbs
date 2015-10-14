@@ -1,7 +1,8 @@
 <div class="content-container">
   <div class="content">
     <div class="new">
-      <h4>Update Coffee:</h4>
+      <h4>Update User:</h4>
+
       <div class="column">
         <div class="form-row">
           <label for="name">Name</label>
@@ -10,16 +11,8 @@
         <div class="form-row">
           {{input type=text value=model.name}}
         </div>
-
-        <div class="form-row">
-          <label for="name">Cost</label>
-        </div>
-
-        <div class="form-row">
-          {{input type=text value=model.cost}}
-        </div>
         <div class="form-row clearfix">
-          <a href="#" class="btn add" {{action 'saveChanges' changeCoffee}}>
+          <a href="#" class="btn add" {{action 'saveChanges' changeUser}}>
             <span>
               Save
             </span>
@@ -29,7 +22,7 @@
 
       <div class="column">
         <div class="alert-success">
-          Coffee updated successfully
+          User updated successfully
         </div>
       </div>
     </div>

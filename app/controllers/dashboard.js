@@ -20,6 +20,8 @@ export default Ember.Controller.extend({
     createHistory(){
       var store = this.store;
 
+      var selectedId = this.get('selectedCoffee').id;
+
       var dateFormat = function (inputFormat) {
         function addZero(number) { return (number < 10) ? '0' + number : number; }
         var date = new Date(inputFormat);
@@ -35,7 +37,7 @@ export default Ember.Controller.extend({
     		date: date,
       });
 
-      store.findRecord('coffee', 23).then((coffee) => {
+      store.findRecord('coffee', selectedId).then((coffee) => {
         newHistory.set('coffee', coffee);
         var cost = Number(coffee.get('cost'));
         var expense = Number(this.get('expense'));
@@ -46,7 +48,7 @@ export default Ember.Controller.extend({
         newHistory.set('user', user);
       });
 
-      newHistory.save();
+      // newHistory.save();
     }
   }
 });

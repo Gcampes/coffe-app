@@ -10,29 +10,48 @@
     {{/each}}
 
   </div>
-  {{#if selectedCoffee}}
-  <div class="coffee-selected">
-    <div class="selected">
-      <div class="title">
-        <h5>{{selectedCoffee.name}}</h5>
-        <h4>R$ {{selectedCoffee.cost}}</h4>
-      </div>
-      <div class="thumbnail">
-        <!--  -->
-      </div>
+  <div class="coffee-selected-container clearfix">
+    <div class="bg">
+
     </div>
-    <div class="btn confirm-drink add" {{action 'createHistory'}}>
-      Confirm
+    <div class="cover">
+
+    </div>
+    <div class="coffee-selected">
+      <div class="selected">
+        <div class="title">
+          <h5>{{selectedCoffee.name}}</h5>
+          <h4>R$ {{selectedCoffee.cost}}</h4>
+        </div>
+        <div class="thumbnail">
+          <!--  -->
+        </div>
+      </div>
+      <div class="btn confirm-drink add" {{action 'createHistory'}}>
+        Confirm
+      </div>
+      <div class="alert-success">
+        Drink registered.
+      </div>
     </div>
   </div>
-  {{/if}}
 </div>
 
 <script>
-  $('.cover').click(function() {
-    $('.active').removeClass('active');
-    $(this).addClass('active');
-  })
-</script>
+  $(document).ready(function(){
+    $('.confirm-drink').click(function(){
+      $('.alert-success').stop(true, false);
+      $('.alert-success').fadeIn(1000, function(){
+        $('.alert-success').delay(1000).fadeOut(4000);
+      })
+    })
 
-{{yield}}
+    $('.cover').click(function() {
+      $('.coffee-selected-container').animate({
+        opacity: 1,
+      }, 500);
+      $('.selected-item').removeClass('selected-item');
+      $(this).addClass('selected-item');
+    });
+  });
+</script>

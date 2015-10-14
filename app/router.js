@@ -8,7 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('dashboard', {}, function() {});
   this.route('history', {});
-  this.route('users', {}, function() {
+  this.route('user', {}, function() {
     this.route('new', {});
     this.route('update', {path:'/update/:id'});
   });
