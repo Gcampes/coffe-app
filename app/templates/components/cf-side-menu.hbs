@@ -1,6 +1,7 @@
 <div class="side-menu">
   <div class="menu-header">
-    <h2>Title</h2>
+    <h2>Coffe App</h2>
+    <h5>Yes, it's coffe</h5>
   </div>
   <ul class="menu">
     <a href="/dashboard"><li>Dashboard</li></a>
@@ -9,3 +10,8 @@
     <a href="/history"><li>History</li></a>
   </ul>
 </div>
+
+<script type="text/javascript">
+  var page = window.location.href.split('/')[3];
+  $('a[href="/'+page+'"]').children().addClass('active');
+</script>

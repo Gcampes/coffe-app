@@ -13,36 +13,40 @@ export default Ember.Controller.extend({
       if(regex.test(element.get('date')))
         sum+=Number(element.get('coffee').get('cost'));
     });
-    return sum;
+    return Math.round(sum * 100) / 100;
   }),
 
   actions:{
     createHistory(){
-      var selected = this.get('selectedCoffee');
-      var inputFormat = function (inputFormat) {
-                            function pad(s) { return (s < 10) ? '0' + s : s; }
-                            var d = new Date(inputFormat);
-                            return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
-                          }
-
-      // var a = this.get('targetObject.store').findRecord('user', 1);
       var store = this.store;
 
-      var data = inputFormat(new Date());
+      var dateFormat = function (inputFormat) {
+        function addZero(number) { return (number < 10) ? '0' + number : number; }
+        var date = new Date(inputFormat);
+        return [addZero(date.getDate()),
+                addZero(date.getMonth()+1),
+                date.getFullYear().toString()
+                .replace('\/20', '\/')]
+                .join('/');
+      }
+      var date = dateFormat(new Date());
+
       var newHistory = store.createRecord('history', {
-    		date: data.replace('\/20', '\/'),
+    		date: date,
       });
 
-      var that = this;
-      store.findRecord('coffee', 23).then(function(coffee){
+      store.findRecord('coffee', 23).then((coffee) => {
         newHistory.set('coffee', coffee);
-        that.set('expense', (Number(that.get('expense'))+Number(coffee.get('cost'))));
+        var cost = Number(coffee.get('cost'));
+        var expense = Number(this.get('expense'));
+        expense += cost;
+        this.set('expense', Math.round(expense*100)/100);
       });
       store.findRecord('user', 1).then(function(user){
         newHistory.set('user', user);
       });
 
-      // newHistory.save();
+      newHistory.save();
     }
   }
 });

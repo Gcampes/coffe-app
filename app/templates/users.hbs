@@ -6,27 +6,8 @@
       </span>
       <span>Users</span>
     </h3>
-
-    <div class="row clearfix">
-      <a href="users/new" class="btn add">
-        <span>
-          Add
-        </span>
-      </a>
-      <!-- <a href="users/update/1" class="btn upd" >
-        <span>
-          Edit
-        </span>
-      </a> -->
-      <!-- <a href="#" class="btn del" {{action 'deleteUser'}}>
-        <span>
-          Delete
-        </span>
-      </a> -->
-    </div>
-
     <div class="row">
-      {{#cf-grid model=model user=true}}
+      {{#cf-grid model=model user=true routeName=routeName add=true}}
       {{/cf-grid}}
     </div>
   </div>

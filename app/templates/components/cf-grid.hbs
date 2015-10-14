@@ -1,3 +1,14 @@
+{{#if add}}
+<div class="row clearfix">
+  <a href="{{routeName}}s/new" class="btn add">
+    <span>
+      Add {{routeName}}
+    </span>
+  </a>
+</div>
+{{/if}}
+
+
 {{#if user}}
 <table>
   <tr>
@@ -21,7 +32,7 @@
     </td>
     <td>
       {{#link-to 'users.update' item.id}}<i class="fa fa-pencil" title="Edit person"></i>{{/link-to}}
-      <i class="fa fa-trash" {{action 'deleteUser' item}} title="Delete person"></i>
+      <i class="fa fa-trash" {{action 'delete' item}} title="Delete person"></i>
     </td>
   </tr>
   {{/each}}
@@ -55,7 +66,7 @@
     </td>
     <td>
       {{#link-to 'coffee.update' item.id}}<i class="fa fa-pencil" title="Edit coffee"></i>{{/link-to}}
-      <i class="fa fa-trash" {{action 'deleteCoffee' item}} title="Delete coffee"></i>
+      <i class="fa fa-trash" {{action 'delete' item}} title="Delete coffee"></i>
     </td>
   </tr>
   {{/each}}
@@ -88,3 +99,11 @@
   {{/each}}
 </table>
 {{/if}}
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('tr:even').addClass('even');
+    $('tr:odd').addClass('odd');
+  });
+</script>
